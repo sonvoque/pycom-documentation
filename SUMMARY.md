@@ -176,7 +176,12 @@
 * [9.2 Syntax](chapter/docnotes/syntax.md)
 * [9.3 REPL vs Scripts](chapter/docnotes/replscript.md)
 
-## 10. License
+## 10. Advanced Topics
 
-* [10.1 License](chapter/license/README.md)
+* [10.1 Firmware Downgrade](chapter/advance/downgrade.md)
+* [10.2 CLI Updater](chapter/advance/cli.md)
+* [10.3 Creating firmware packages](chapter/advance/fw_package.md)
 
+## 11. License
+
+* [11.1 License](chapter/license/README.md)
