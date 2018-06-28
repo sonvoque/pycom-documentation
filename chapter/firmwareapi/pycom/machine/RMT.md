@@ -104,7 +104,7 @@ The ``pulses_get`` function can be called to receive more than 128 pulses, howev
 received data.
 {% endhint %}
 
-<function>rmt.pulses_send(duration, data, start_level)</function>
+<function>rmt.pulses_send(duration, data, start_level, wait_tx_done)</function>
 
 Generates pulses as defined by the parameters below
 - ``duration`` represents the duration of the pulses to be sent,
@@ -121,6 +121,12 @@ level of the first duration, the signal level then toggles between each duration
 in ``data`` will have have an equal length as set by ``duration``. If ``data``
 and ``duration`` are provided as tuples, they must be of the same number of
 elements, with each pulse lasting its matching duration.
+
+`wait_tx_done` :
+
+`False`: Allows the function to send asynchronosly without waiting for the transmission to be done.
+
+`True`: will wait for transmission to be done
 
 
 ### Constants
