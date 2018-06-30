@@ -105,6 +105,7 @@ pycom.wdt_on_boot_timeout()         # get the WDT timeout value
 Return a list of pulses at pin. The methods scans for transitions at pin and returns a list of tuples, each telling the pin value and the duration in microseconds of that value.  pin is a pin object, which must have set
 to INP or OPEN_DRAIN mode. The scan stops if not transitions occurs within timeout milliseconds.
 Example:
+
 ```
 # get the raw data from a DHT11/DHT22/AM2302 sensor
 from machine import Pin
@@ -126,6 +127,7 @@ calls to ota_write(buffer), and is terminated with ota_finish().
 After reset, the new image gets active. buffer shall hold the image data to be written, in arbitrary sizes. A block size of 4096 is recommended.
 
 Example:
+
 ```
 # Firmware update by reading the image from the SD card
 #
@@ -154,5 +156,19 @@ with open(APPIMG, "rb") as f:
             break
     ota_finish()
 ```
+
 Instead of reading the data to be written from a file, it can obviously also be received from a server using any suitable protocol, without the need to store
 it in the devices file system.
+
+#####<function>pycom.bootmgr(boot_partition=pycom.FACTORY, fs\_type=FAT, safeboot=False, reset=False)</function>
+
+- ``boot_partition`` This is to set the partition to boot from , this could be set to either `pycom.FACTORY` or `pycom.OTA_0`
+
+- ``fs_type`` This is to set the filesystem to use for the flash memory (`/flash`). This could be set to `pycom.FAT` for FAT16 or `pycom.LittleFS` for LittleFS filesystem.
+
+_Note: When the firmware is built with option `FS_USE_LITTLEFS` the file system for `/flash` is forced to be LittleFS._
+
+- ``safeboot`` Enable or Disable safemoot mode.
+
+- ``reset`` Set `True` to reset target after updating the `bootmgr` options , `False` for not resetting.
+
