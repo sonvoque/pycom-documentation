@@ -127,7 +127,15 @@ Get or set the WLAN mode.
 
 #####<function>wlan.ssid([ssid])</function>
 
-Get or set the SSID when in AP mode.
+Get or set the SSID (Set SSID of AP).
+
+In case if mode = `WLAN.STA` this method can get the ssid of AP the module is connected to.
+
+In case of mode = `WLAN.AP` this method can get the ssid of the module's own AP.
+
+In case of mode = `WLAN.STA_AP` this method can get the ssid of module's own AP plus the AP the STA is connected to in form of a tuple:
+
+ _\<SSID of connected AP, SSID of own AP\>_
 
 #####<function>wlan.auth([auth])</function>
 
