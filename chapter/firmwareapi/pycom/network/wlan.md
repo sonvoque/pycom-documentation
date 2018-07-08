@@ -129,11 +129,11 @@ Get or set the WLAN mode.
 
 Get or set the SSID (Set SSID of AP).
 
-In case if mode = `WLAN.STA` this method can get the ssid of AP the module is connected to.
+In case if mode = `WLAN.STA` this method can get the ssid of AP the board is connected to.
 
-In case of mode = `WLAN.AP` this method can get the ssid of the module's own AP.
+In case of mode = `WLAN.AP` this method can get the ssid of the board's own AP.
 
-In case of mode = `WLAN.STA_AP` this method can get the ssid of module's own AP plus the AP the STA is connected to in form of a tuple:
+In case of mode = `WLAN.STA_AP` this method can get the ssid of board's own AP plus the AP the STA is connected to in form of a tuple:
 
  _\<SSID of connected AP, SSID of own AP\>_
 
@@ -161,6 +161,14 @@ Set the bandwidth of the wifi, either 20 MHz or 40 MHz can be configured, use co
 
 Set the Host name of the device connecting to the AP in case of Wifi `mode=WLAN.STA`, in case of `mode=WLAN.AP` this is the name of the host hosting the AP. Max length of name string is 32 Bytes
 
+#####<function>wlan.ap\_sta\_list()</function>
+
+Gets an info list of all stations connected to the board's AP.
+
+Info returned is a list of tuples containning ([mac address of connected STA], [average rssi value], [Wlan protocol enabled by STA]).
+
+Protocol types are either : `WLAN.PHY_11_B`, `WLAN.PHY_11_G`, `WLAN.PHY_11_N` or `WLAN.PHY_LOW_RATE`
+
 ### Constants
 
 <constant>WLAN.STA</constant> <constant>WLAN.AP</constant> <constant>WLAN.STA_AP</constant>
@@ -178,3 +186,7 @@ Antenna type
 <constant>WLAN.HT20</constant> <constant>WLAN.HT40</constant>
 
 WLAN Bandwidth
+
+<constant>WLAN.PHY\_11\_B</constant> <constant>WLAN.PHY\_11\_G</constant> <constant>WLAN.PHY\_11\_N</constant> <constant>WLAN.PHY\_LOW\_RATE</constant>
+
+WLAN protocol
