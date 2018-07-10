@@ -95,9 +95,45 @@ keyfile is the path to the client key. Only used if username and password are no
 
 - ``hostname`` is the name of the host connecting to the AP. Max length of name string is 32 Bytes
 
-#####<function>wlan.scan()</function>
+#####<function>wlan.scan([ssid=NULL, bssid=NULL, channel=0, show_hidden=False, type=WLAN.SCAN\_ACTIVE, scantime=120ms])</function>
 
-Performs a network scan and returns a list of named tuples with (ssid, bssid, sec, channel, rssi). Note that channel is always None since this info is not provided by the WiPy.
+Performs a network scan and returns a list of named tuples with (ssid, bssid, sec, channel, rssi). When no config args passed scan will be performed with default configurations.
+
+Note: For Fast scan mode ssid/bssid and channel should be 
+
+- ``ssid`` : If the SSID is not NULL, it is only the AP with the same SSID that can be scanned.
+
+- ``bssid`` : If the BSSID is not NULL, it is only the AP with the same BSSID that can be scanned. The bssid is given as 6 Hexadecimal bytes literals (i.e b'\xff\xff\xff\xff\xff\xff')
+
+- ``channel`` : If “channel” is 0, there will be an all-channel scan; otherwise, there will be a specific-channel scan.
+
+- ``show_hidden`` : If “show_hidden” is 0, the scan ignores the AP with a hidden SSID; otherwise, the scan considers the hidden AP a normal one.
+
+- ``type`` : If “type” is `WLAN.SCAN_ACTIVE`, the scan is “active”; otherwise, it is a “passive” one.
+
+	- Active Scan is performed by sending a probe request. The default scan is an active scan
+
+	- Passive Scan sends no probe request. Just switch to the specific channel and wait for a beacon. 
+
+- ``scantime`` : 
+
+	This field is used to control how long the scan dwells on each channel.
+ 	For passive scans, scantime=[int] designates the dwell time for each channel.
+ 
+	For active scans, dwell times for each channel are listed below. 
+	scantime is given as a tuple for min and max times (min,max)
+
+	{% hint style='danger' %}
+	
+	min=0, max=0: scan dwells on each channel for 120 ms.
+	
+	min>0, max=0: scan dwells on each channel for 120 ms.
+	
+	min=0, max>0: scan dwells on each channel for max ms.
+	
+	min>0, max>0: The minimum time the scan dwells on each channel is min ms. If no AP is found during this time frame, the scan switches to the next channel. Otherwise, the scan dwells on the channel for max ms.If you want to improve the performance of the the scan, you can try to modify these two parameters.
+	
+	{% endhint %}
 
 #####<function>wlan.disconnect()</function>
 
@@ -190,3 +226,7 @@ WLAN Bandwidth
 <constant>WLAN.PHY\_11\_B</constant> <constant>WLAN.PHY\_11\_G</constant> <constant>WLAN.PHY\_11\_N</constant> <constant>WLAN.PHY\_LOW\_RATE</constant>
 
 WLAN protocol
+
+<constant>WLAN.SCAN\_ACTIVE</constant> <constant>WLAN.SCAN\_PASSIVE</constant>
+
+Scan Type
