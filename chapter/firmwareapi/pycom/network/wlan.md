@@ -206,6 +206,28 @@ Info returned is a list of tuples containning ([mac address of connected STA], [
 
 Protocol types are either : `WLAN.PHY_11_B`, `WLAN.PHY_11_G`, `WLAN.PHY_11_N` or `WLAN.PHY_LOW_RATE`
 
+#####<function>wlan.max\_tx\_power([power])</function>
+
+Gets or Sets the maximum allowable transmission power for wifi.
+
+Packets of different rates are transmitted in different powers according to the configuration in phy init data. This API only sets maximum WiFi transmiting power. If this API is called, the transmiting power of every packet will be less than or equal to the value set by this API. Default is Level 0.
+
+Values passed in power are mapped to transmit power levels as follows:
+
+- \[78, 127\]: level0
+- \[76, 77\]: level1
+- \[74, 75\]: level2
+- \[68, 73\]: level3
+- \[60, 67\]: level4
+- \[52, 59\]: level5
+- \[44, 51\]: level5 - 2dBm
+- \[34, 43\]: level5 - 4.5dBm
+- \[28, 33\]: level5 - 6dBm
+- \[20, 27\]: level5 - 8dBm
+- \[8, 19\]: level5 - 11dBm
+- \[-128, 7\]: level5 - 14dBm
+
+
 ### Constants
 
 <constant>WLAN.STA</constant> <constant>WLAN.AP</constant> <constant>WLAN.STA_AP</constant>
