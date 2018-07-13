@@ -386,6 +386,36 @@ from non-volatile memory.
 lora.nvram_erase()
 ```
 
+#####<function>lora.nvram_erase()</function>
+
+Remove the LoRaWAN state (joined status, network keys, packet counters, etc)
+from non-volatile memory.
+
+```python
+lora.nvram_erase()
+```
+
+#####<function>lora.mesh()</function>
+
+Enable the Mesh network.
+
+```python
+lora.mesh()
+```
+
+#####<function>lora.cli()</function>
+
+Send OpenThread CLI commands, the list is [here](https://github.com/openthread/openthread/blob/master/src/cli/README.md).
+The output is multiline string, having as line-endings the `\r\n`.
+
+```bash
+>>> print(lora.cli("ipaddr"))
+fdde:ad00:beef:0:0:ff:fe00:fc00
+fdde:ad00:beef:0:0:ff:fe00:e800
+fdde:ad00:beef:0:e1f0:783c:1e8f:c763
+fe80:0:0:0:2c97:cb65:3219:c86
+```
+
 ### Constants
 
 <constant>LoRa.LORA</constant> <constant>LoRa.LORAWAN</constant>
@@ -423,6 +453,8 @@ s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
 
 And they must be created after initialising the LoRa network card.
 
+{% hint style='info' %} The LoRa-Mesh socket supports only the following socket methods: close, bind, sendto and recvfrom.{% endhint %}
+
 LoRa sockets support the following standard methods from the socket module:
 
 #####<function>socket.close()</function>
@@ -455,6 +487,16 @@ s.send(bytes([1, 2, 3]))
 or:
 ```python
 s.send('Hello')
+```
+
+#####<function>socket.sendto(bytes,(ip, port))</function>
+
+This is supported only by the LoRa Mesh socket.
+
+Usage:
+
+```python
+s.send('Hello', ('fdde:ad00:beef:0:0:ff:fe00:e800', 1234))
 ```
 
 #####<function>socket.recv(bufsize)</function>

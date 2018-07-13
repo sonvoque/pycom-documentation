@@ -99,7 +99,7 @@ Connect to a wifi access point using the given SSID, and other security paramete
 
 Performs a network scan and returns a list of named tuples with (ssid, bssid, sec, channel, rssi). When no config args passed scan will be performed with default configurations.
 
-Note: For Fast scan mode ssid/bssid and channel should be 
+Note: For Fast scan mode ssid/bssid and channel should be
 
 - ``ssid`` : If the SSID is not NULL, it is only the AP with the same SSID that can be scanned.
 
@@ -113,27 +113,24 @@ Note: For Fast scan mode ssid/bssid and channel should be
 
 	- Active Scan is performed by sending a probe request. The default scan is an active scan
 
-	- Passive Scan sends no probe request. Just switch to the specific channel and wait for a beacon. 
+	- Passive Scan sends no probe request. Just switch to the specific channel and wait for a beacon.
 
-- ``scantime`` : 
+- ``scantime`` :
 
 	This field is used to control how long the scan dwells on each channel.
  	For passive scans, scantime=[int] designates the dwell time for each channel.
- 
-	For active scans, dwell times for each channel are listed below. 
+
+	For active scans, dwell times for each channel are listed below.
 	scantime is given as a tuple for min and max times (min,max)
 
 	{% hint style='danger' %}
-	
 	min=0, max=0: scan dwells on each channel for 120 ms.
-	
+
 	min>0, max=0: scan dwells on each channel for 120 ms.
-	
+
 	min=0, max>0: scan dwells on each channel for max ms.
-	
-	min>0, max>0: The minimum time the scan dwells on each channel is min ms. If no AP is found during this time frame, the scan switches to the next channel. Otherwise, the scan dwells on the channel for max ms.If you want to improve the performance of the the scan, you can try to modify these two parameters.
-	
-	{% endhint %}
+
+	min>0, max>0: The minimum time the scan dwells on each channel is min ms. If no AP is found during this time frame, the scan switches to the next channel. Otherwise, the scan dwells on the channel for max ms.If you want to improve the performance of the the scan, you can try to modify these two parameters.{% endhint %}
 
 
 #####<function>wlan.disconnect()</function>

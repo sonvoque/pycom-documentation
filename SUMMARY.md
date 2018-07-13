@@ -79,6 +79,7 @@
     * [4.3.5 LoPy to LoPy](chapter/tutorials/lora/module-module.md)
     * [4.3.6 LoRaWAN Nano-Gateway](chapter/tutorials/lora/lorawan-nano-gateway.md)
     * [4.3.7 RN2483 to LoPy](chapter/tutorials/lora/537-rn2483-to-lopy.md)
+    * [4.3.8 LoRa Mesh](chapter/tutorials/lora/lora-mesh.md)
 * [4.4 Sigfox Examples](chapter/tutorials/sigfox/README.md)
     * [4.4.1 Register Device](chapter/tutorials/sigfox/register.md)
     * [4.4.2 Disengage Sequence Number](chapter/tutorials/sigfox/disengage_seq_num.md)
