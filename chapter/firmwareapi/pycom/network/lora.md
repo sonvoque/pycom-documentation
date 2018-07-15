@@ -397,7 +397,7 @@ lora.nvram_erase()
 
 #####<function>lora.mesh()</function>
 
-Enable the Mesh network.
+Enable the Mesh network. Only after Mesh enabling the <function>lora.cli()</function> and `socket` can be used.
 
 ```python
 lora.mesh()
@@ -453,7 +453,9 @@ s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
 
 And they must be created after initialising the LoRa network card.
 
-{% hint style='info' %} The LoRa-Mesh socket supports only the following socket methods: close, bind, sendto and recvfrom.{% endhint %}
+LoRa-Mesh socket is created, if the Mesh was enabled before (<function>lora.mesh()</function> was called).
+
+{% hint style='info' %} The LoRa-Mesh socket supports only the following socket methods: <function>close()</function>, <function>bind()</function>, <function>sendto()</function> and <function>recvfrom()</function>.{% endhint %}
 
 LoRa sockets support the following standard methods from the socket module:
 
@@ -496,7 +498,7 @@ This is supported only by the LoRa Mesh socket.
 Usage:
 
 ```python
-s.send('Hello', ('fdde:ad00:beef:0:0:ff:fe00:e800', 1234))
+s.sendto('Hello', ('fdde:ad00:beef:0:0:ff:fe00:e800', 1234))
 ```
 
 #####<function>socket.recv(bufsize)</function>

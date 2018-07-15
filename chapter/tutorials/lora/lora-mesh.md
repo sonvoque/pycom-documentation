@@ -18,8 +18,9 @@ This example shows how to:
 * open UDP socket for:
   * listening incoming UDP packets and answering back \(ACK\)
   * sending packets to all neighbors
+* toggle LED as packet/ping is received.
 
-{% hint style='info' %} The LoRa-Mesh socket supports only the following socket methods: close, bind, sendto and recvfrom.{% endhint %}
+{% hint style='info' %} The LoRa-Mesh socket supports only the following socket methods: <function>close()</function>, <function>bind()</function>, <function>sendto()</function> and <function>recvfrom()</function>.{% endhint %}
 
 ### Lora Mesh example
 
