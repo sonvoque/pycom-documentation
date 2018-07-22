@@ -43,7 +43,7 @@ The WLAN constructor is special in the sense that if no arguments besides the `i
 
 ### Methods
 
-#####<function>wlan.init(mode, * , ssid=None, auth=None, channel=1, antenna=None, power_save=False, hidden=False, bandwidth=HT40)</function>
+#####<function>wlan.init(mode, * , ssid=None, auth=None, channel=1, antenna=None, power_save=False, hidden=False, bandwidth=HT40, max\_tx\_pwr=20, country=CN)</function>
 
 Set or get the WiFi network processor configuration.
 
@@ -62,6 +62,10 @@ used for other things.
 - `hidden` only valid in <constant>WLAN.AP</constant> mode to create an access point with a hidden SSID when set to `True`.
 
 - ``bandwidth`` is the Bandwidth to use, either 20MHz or 40 MHz , use `HT20` or `HT40`
+
+- ``max_tx_pwr`` is the maximum WiFi Tx power allowed. see `WLAN.max_tx_power()` for more details
+
+- ``country`` tuple representing the country configuration parameters. see `WLAN.country()` for more details
 
 For example, you can do:
 
@@ -227,6 +231,23 @@ Values passed in power are mapped to transmit power levels as follows:
 - \[8, 19\]: level5 - 11dBm
 - \[-128, 7\]: level5 - 14dBm
 
+#####<function>wlan.country([country, schan, nchan, max\_tx\_pwr, policy])</function>
+
+Gets or set s Country configuration parameters for wifi.
+
+- ``country`` That is the country name code , it is max 2 characters string representing the country eg: "CN" for china nad "NL" for Netherlands
+
+- ``scahn`` is the start channel number, in scan process scanning will be performed starting from this channels till the total number of channels. it should be less than or equal 14.
+
+- ``nchan`` is the total number of channels in the specified country. maximum is 14
+
+- ``max_tx_pwr`` Maximum transmission power allowed. see `WLAN.max_tx_power()` for more details.
+
+- ``policy`` Is the method when setting country configuration for `WLAN.COUNTRY_POL_AUTO` in STA mode the wifi will aquire the same country config of the connected AP, for `WLAN.COUNTRY_POL_MAN` the configured country parameters will take effect regardless of Connected AP.
+
+#####<function>wlan.joined\_ap\_info()</function>
+
+Returns a tuple with (bssid, ssid, primary channel, rssi, Authorization method, wifi standard used) of the connected AP in case of STA mode. 
 
 ### Constants
 
@@ -253,3 +274,7 @@ WLAN protocol
 <constant>WLAN.SCAN\_ACTIVE</constant> <constant>WLAN.SCAN\_PASSIVE</constant>
 
 Scan Type
+
+<constant>WLAN.COUNTRY\_POL\_AUTO</constant> <constant>WLAN.COUNTRY\_POL\_MAN</constant>
+
+WLAN country config policy
