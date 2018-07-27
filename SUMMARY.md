@@ -80,8 +80,7 @@
     * [4.3.6 LoRaWAN Nano-Gateway](chapter/tutorials/lora/lorawan-nano-gateway.md)
     * [4.3.7 RN2483 to LoPy](chapter/tutorials/lora/537-rn2483-to-lopy.md)
 * [4.4 Sigfox Examples](chapter/tutorials/sigfox/README.md)
-    * [4.4.1 Register Device](chapter/tutorials/sigfox/register.md)
-    * [4.4.2 Disengage Sequence Number](chapter/tutorials/sigfox/disengage_seq_num.md)
+    * [4.4.1 Disengage Sequence Number](chapter/tutorials/sigfox/disengage_seq_num.md)
 * [4.5 LTE Examples](chapter/tutorials/lte/README.md)
     * [4.5.1 CAT-M1](chapter/tutorials/lte/cat_m1.md)
     * [4.5.2 NB-IoT](chapter/tutorials/lte/nb_iot.md)
@@ -199,6 +198,9 @@
 * [8.3 Add a device to Pybytes](chapter/pybytes/connect/intro.md)
     * [8.3.1 Connect to Pybytes: Quick Add](chapter/pybytes/connect/quick.md)
     * [8.3.2 Connect to Pybytes: Flash Pybytes library manually](chapter/pybytes/connect/flash.md)
+    * [8.3.3 Add Sigfox device](chapter/pybytes/connect/sigfox/sigfox.md)
+        * [8.3.3.1 DevKit contract](chapter/pybytes/connect/sigfox/sigfoxDevKit.md)
+        * [8.3.3.2 Custom contract](chapter/pybytes/connect/sigfox/sigfoxCustomContract.md)
 * [8.4 Visualise data from your device](chapter/pybytes/dashboard/intro.md)
 
 ## 9. Documentation Notes
