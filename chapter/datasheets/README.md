@@ -7,9 +7,9 @@ pinouts, spec sheets, relevant examples and notes.
 
   - [WiPy 2.0](development/wipy2.md)
   - [WiPy 3.0](development/wipy3.md)
-  - [SiPy](development/sipy.md)
   - [LoPy](development/lopy.md)
-  - [LoPy4](development/lopy4.md)
+  - [LoPy 4](development/lopy4.md)
+  - [SiPy](development/sipy.md)
   - [GPy](development/gpy.md)
   - [FiPy](development/fipy.md)
 
@@ -25,6 +25,8 @@ pinouts, spec sheets, relevant examples and notes.
 ## Shields and Expansion boards
 
   - [Expansion Board 2.0](boards/expansion2.md)
+  - [Expansion Board 3.0](boards/expansion3.md)
   - [Pysense](boards/pysense.md)
   - [Pytrack](boards/pytrack.md)
+  - [Pyscan](boards/pyscan.md)
   - [Deep Sleep Shield](boards/deepsleep.md)
