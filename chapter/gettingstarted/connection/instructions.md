@@ -78,7 +78,7 @@ the following credentials:
   - SSID: `{{ module | lower }}-wlan`
   - password: `www.pycom.io`
 
- - Once connected to this network you will be able to access the telnet and FTP
+- Once connected to this network you will be able to access the telnet and FTP
 servers running on the {{ module }}. For both of these the login details are:
   - username: `micro`
   - password: `python`
