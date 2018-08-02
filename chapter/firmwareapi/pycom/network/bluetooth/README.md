@@ -165,7 +165,7 @@ Creates a callback that will be executed when any of the triggers occurs. The ar
 - `handler` is the function that will be executed when the callback is triggered.
 - `arg` is the argument that gets passed to the callback. If nothing is given the bluetooth object itself is used.
 
-An example of how this may be used can be seen in the <function>bluetooth.events()<function> method.
+An example of how this may be used can be seen in the <function>bluetooth.events()</function> method.
 
 #####<function>bluetooth.events()</function>
 

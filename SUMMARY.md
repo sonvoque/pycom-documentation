@@ -30,7 +30,7 @@
     * [1.4.1 Sigfox](chapter/gettingstarted/registration/sigfox.md)
     * [1.4.2 Cellular](chapter/gettingstarted/registration/cellular.md)
     * [1.4.3 LoRaWAN](chapter/gettingstarted/registration/lora.md)
-        * [1.4.3.2 The Things Network](chapter/gettingstarted/registration/lora/ttn.md)
+        * [1.4.3.1 The Things Network](chapter/gettingstarted/registration/lora/ttn.md)
         * [1.4.3.2 Objenious](chapter/gettingstarted/registration/lora/objenious.md)
 
 ## 2. Pymakr Plugin
@@ -85,7 +85,7 @@
     * [4.5.1 CAT-M1](chapter/tutorials/lte/cat_m1.md)
     * [4.5.2 NB-IoT](chapter/tutorials/lte/nb_iot.md)
     * [4.5.3 Module IMEI](chapter/tutorials/lte/IMEI.md)
-    * [4.5.3 Modem Firmware Update](chapter/tutorials/lte/firmware.md)
+    * [4.5.4 Modem Firmware Update](chapter/tutorials/lte/firmware.md)
 * [4.6 Pytrack Examples](chapter/tutorials/pytrack/README.md)
 * [4.7 Pysense Examples](chapter/tutorials/pysense/README.md)
 * [4.8 Pyscan Examples](chapter/tutorials/pyscan/README.md)
