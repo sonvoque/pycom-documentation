@@ -149,9 +149,13 @@ while bluetooth.isscanning():
             print(ubinascii.hexlify(mfg_data))
 ```
 
-#####<function>bluetooth.connect(mac_addr)</function>
+#####<function>bluetooth.connect(mac_addr, timeout=None)</function>
 
-Opens a BLE connection with the device specified by the `mac_addr` argument. This function blocks until the connection succeeds or fails. If the connections succeeds it returns a object of type `GATTCConnection`.
+Arguments:
+
+- `mac_addr` is the address of the remote device to connect
+- `timeout` specifies the amount of time in milliseconds to wait for the connection process to finish. If not given then no timeout is applied
+The function blocks until the connection succeeds or fails (raises OSError) or the given `timeout` expires (raises Bluetooth.timeout TimeoutError). If the connections succeeds it returns a object of type `GATTCConnection`.
 
 ```python
 bluetooth.connect('112233eeddff') # mac address is accepted as a string
@@ -252,3 +256,6 @@ Closes the BLE connection with the client.
 
 ##### Antenna type
 <constant>Bluetooth.INT_ANT</constant> <constant>Bluetooth.EXT_ANT</constant>
+
+### Exceptions
+<constant>Bluetooth.timeout</constant>

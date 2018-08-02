@@ -38,3 +38,25 @@ This method allows to register for notifications on the characteristic.
 - `trigger` can must be <constant>Bluetooth.CHAR_NOTIFY_EVENT</constant>.
 - `handler` is the function that will be executed when the callback is triggered.
 - `arg` is the argument that gets passed to the callback. If nothing is given, the characteristic object that owns the callback will be used.
+
+#####<function>characteristic.read_descriptor(uuid)</function>
+
+Returns the value of the descriptor specified by the `uuid` parameter. If no descriptor found for the characteristic returns None.
+
+```python
+descriptor = char.read_descriptor(0x2900)
+if(descriptor != None):
+    print("Characteristic Extended Properties: " + str(binascii.hexlify((descriptor))))
+
+descriptor = char.read_descriptor(0x2901)
+if(descriptor != None):
+    print("Characteristic User Description: " + str(binascii.hexlify((descriptor))))
+
+descriptor = char.read_descriptor(0x2902)
+if(descriptor != None):
+    print("Client Characteristic Configuration: " + str(binascii.hexlify((descriptor))))
+
+descriptor = char.read_descriptor(0x2904)
+if(descriptor != None):
+    print("Characteristic Presentation Format: " + str(binascii.hexlify((descriptor))))
+```
