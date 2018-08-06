@@ -69,7 +69,7 @@ Write the data contained in `buf`. Returns the number of bytes written.
 
 #####<function>spi.read(nbytes, * , write=0x00)</function>
 
-Read the `nbytes` while writing the data specified by `write`. Return the number of bytes read.
+Read the `nbytes` while writing the data specified by `write`. Returns the bytes read.
 
 #####<function>spi.readinto(buf, * , write=0x00)</function>
 
