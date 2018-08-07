@@ -37,6 +37,10 @@ and I2C (SDA,SCL) are defaults and can be changed in Software.
 The datasheet of the {{module}} is available as a
 <a href="../downloads/{{module | lower}}-specsheet.pdf" target="_blank">PDF File</a>.
 
+{% if module=="GPy" or module=="FiPy" %}
+The drawing of the LTE-M antenna is available as a <a href="../downloads/lte-m-antenna-drawing.pdf" target="_blank">PDF File</a>.
+{% endif %}
+
 ## Notes
 
 ### WiFi
